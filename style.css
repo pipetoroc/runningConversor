@@ -1,0 +1,95 @@
+:root{
+  --neutral-color-light: #EBEDF2;
+  --neutral-color-dark: #0D0D0D; 
+  --secondary-color:#AAA7F2;
+  --tertiary-color: #6F6BF2;
+  --accent-color: #5F6BF2;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.875rem;
+  height: 10%;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+.logo{
+  width: 9.375rem;
+  height: 9.375rem;
+  border-radius: 1.25rem;
+  background-image: url('https://drive.google.com/uc?id=1oRExPWGhIWoJj_uEIekS3OZOPBlKLXER');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--neutral-color-light);
+}
+i{
+  justify-self: end;
+  width: 50px;
+  font-size: 3rem;
+  color: black;
+}
+main{
+  height: 80%;
+  margin: .625rem;
+  text-align: center;
+}
+h1{
+  margin: 4.75rem 0;
+  padding: 1.875rem;
+  font-size: 4.5rem;
+}
+label{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+input{
+  padding: .9375rem;
+  border-radius: 1.25rem;
+  border: solid 1px var(--accent-color);
+}
+h2{
+  margin-top: 1.875rem;
+  margin-bottom: 3.75rem;
+  font-size: 2rem;
+}
+button{
+  padding: 1.875rem;
+  margin: 3.75rem 0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--neutral-color-light);
+  background-color: var(--accent-color);
+  border-radius: 1.25rem;
+  border: solid .0625rem var(--neutral-color-dark);
+}
+button:hover{
+  color:var(--neutral-color-dark);
+  cursor: pointer;
+}
+footer{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 2.875rem;
+  width: 100%;
+  min-height: fit-content;
+  height: 10.25rem;
+  font-size: 2rem;
+  font-weight: 100;
+  text-align: end;
+  background-color: var(--secondary-color);
+}
