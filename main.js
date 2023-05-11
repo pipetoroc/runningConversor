@@ -1,23 +1,38 @@
-const btn = document.querySelector('#btn');
-btn.addEventListener('click',calcularVelocidad);
+const main = document.querySelector('main')
+const form = document.getElementById('form-activity')
 
-function calcularVelocidad(){
-   const input = document.getElementsByTagName('input')
-   let resultado1 = document.querySelector('#result1');
-   let resultado2 = document.querySelector('#result2');
-   let resultado3 = document.querySelector('#result3');
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault()
 
-   let values = [];
-   let result = [];
-   for (let i = 0; i < input.length; i++) {
-      values.push(input[i].value);
-   }
-   for (let i = 0; i < values.length; i++) {
-      result.push((1/(values[i]/60)).toFixed(2));
-   }
-   resultado1.innerHTML = `La velocidad en km/hr es: ${result[0]}km/hr`;
-   resultado2.innerHTML = `La velocidad en km/hr es: ${result[1]}km/hr`;
-   resultado3.innerHTML = `La velocidad en km/hr es: ${result[2]}km/hr`;
+  const formCheck = document.getElementById('form-velocities')
+  if (formCheck) {
+    formCheck.remove()
+  }
+
+  const form = document.createElement('form')
+  form.id = 'form-velocities'
+  const fieldset = document.createElement('fieldset')
+
+  const legend = document.createElement('legend')
+  legend.innerHTML = 'Escribe las velocidades de tus entrenos'
+  legend.className = 'velocidades'
+  fieldset.appendChild(legend)
+
+  const numberActivities = document.getElementById('number-activities')
+  for (let i = 1; i <= numberActivities.value; i++) {
+    const input = document.createElement('input')
+    input.placeholder = `Escribe la velocidad ${i}`
+    fieldset.appendChild(input)
+  }
+  form.appendChild(fieldset)
+  main.appendChild(form)
+  calcularVelocidad()
+})
+const formVelocity = document.getElementById('form-velocities')
+formVelocity.addEventListener('submit', calcularVelocidad)
+
+function calcularVelocidad (evt) {
+  evt.preventDefault()
+  const inputs = document.querySelectorAll('input')
+  console.log(inputs)
 }
-
-
