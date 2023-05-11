@@ -1,17 +1,170 @@
 :root{
-  --neutral-color-light: #EBEDF2;
-  --neutral-color-dark: #0D0D0D; 
-  --secondary-color:#AAA7F2;
-  --tertiary-color: #6F6BF2;
-  --accent-color: #5F6BF2;
+
+}
+
+@charset "UTF-8";
+/* Aquí definimos las Custom properties */
+:root {
+  --background: #004643;
+  --primary: #fffffe;
+  --secondary: #abd1c6;
+  --tertiary: #e16162;
+  --accent: #f9bc60;
+  --text-button: #001e1d;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* Las adaptamos al modo oscuro */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ececec;
+  }
+} */
+
+/* Opcional */
+/* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* Opcional */
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {  
+  background-color: var(--secondary);
+  color: var(--text);
+}
+::selection {
+  background-color: var(--text);
+  color: var(--secondary);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--paragraph);
+  /* opcional */
+  line-height: 2.4em;
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
 }
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-html{
-  font-size: 62.5%;
 }
 header{
   display: flex;
@@ -20,7 +173,6 @@ header{
   padding: 1.875rem;
   height: 10%;
   width: 100%;
-  background-color: var(--secondary-color);
 }
 .logo{
   width: 9.375rem;
@@ -32,64 +184,80 @@ header{
   background-size: contain;
 }
 body{
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--neutral-color-light);
+  font-family: var(--tipo-principal);
+  background-color: var(--background);
+}
+main{
+  margin: 16px;
 }
 i{
   justify-self: end;
   width: 50px;
   font-size: 3rem;
-  color: black;
-}
-main{
-  height: 80%;
-  margin: .625rem;
-  text-align: center;
+  color: var(--primary);
 }
 h1{
-  margin: 4.75rem 0;
-  padding: 1.875rem;
-  font-size: 4.5rem;
+  color: var(--primary);
+  /* text-wrap: balance; */
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 5rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+form{
+  margin-top: 4rem;
+  color: var(--secondary);
 }
 label{
-  text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 input{
+  min-width: 290px;
   padding: .9375rem;
-  border-radius: 1.25rem;
-  border: solid 1px var(--accent-color);
+  border-radius: 4px;
+  border: solid 1px var(--text-button );
+  background-color: var(--primary);
+  color: var(--text-button);
+  font-size: 1.5rem;
+  outline: none;
 }
 h2{
-  margin-top: 1.875rem;
-  margin-bottom: 3.75rem;
+  margin-top: 4rem;
+  color: var(--secondary);
   font-size: 2rem;
+  font-weight: bold;
+}
+p{
+  margin-top:2rem;
+  font-size: 2rem;
+  color: var(--secondary);
 }
 button{
   padding: 1.875rem;
   margin: 3.75rem 0;
   font-size: 3rem;
   font-weight: bold;
-  color: var(--neutral-color-light);
-  background-color: var(--accent-color);
+  color: var(--button-text);
+  background-color: var(--button);
   border-radius: 1.25rem;
-  border: solid .0625rem var(--neutral-color-dark);
+  border: solid .0625rem var(--button-text);
 }
 button:hover{
   color:var(--neutral-color-dark);
   cursor: pointer;
 }
 footer{
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: end;
   align-items: center;
-  padding-right: 2.875rem;
   width: 100%;
-  min-height: fit-content;
-  height: 10.25rem;
-  font-size: 2rem;
-  font-weight: 100;
+  min-height: fit-content;  
+  padding: 16px;
+  font-size: 1.5rem;
   text-align: end;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary);
 }

@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Running Calculator</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-		<figure class="logo"></figure>
-    <div>
-      <a href="https://github.com/pipetoroc" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="mailto:ftorocastilla@gmail.com" target="_blank"><i class="fa-solid fa-envelope-open"></i></a>
-      <a href="https://www.linkedin.com/in/felipe-toro-castilla/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </header>
-  <main>
-    <section>
-      <h1>Calculadora de velocidades</h1>
-      <label for="velocidad1">Escribe tu velocidad en min/km: 
-        <input type="number" id="velocidad1" placeholder="velocidad min/km">
-      </label>
-      <h2 id="result1"></h2>
-      <label for="velocidad2">Escribe tu velocidad en min/km: 
-        <input type="number" id="velocidad2" placeholder="velocidad min/km">
-      </label>
-      <h2 id="result2"></h2>
-      <label for="velocidad3">Escribe tu velocidad en min/km: 
-        <input type="number" id="velocidad3" placeholder="velocidad min/km">
-      </label>
-      <h2 id="result3"></h2>
-    </section>
-    <button id="btn">Calcular</button>
-  </main>
-  <footer>
-    © 2022 by Felipe Toro Castila (PipeToroC)
-  </footer>
-  <script src="https://kit.fontawesome.com/38f91498bb.js" crossorigin="anonymous"></script>
-  <script src="./main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Running Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <header>
+      <figure class="logo"></figure>
+      <div>
+        <a href="https://github.com/pipetoroc" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:ftorocastilla@gmail.com" target="_blank">
+          <i class="fa-solid fa-envelope-open"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/felipe-toro-castilla/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </header>
+    <main>
+      <h1> Conversor de velocidades</h1>
+      <h2> Bienvenido!</h2>
+      <p> Calcula las velocidades de tu entrenamiento</p>
+      <form action="">
+        <label for="actividades">Número de actividades de tu entreno?
+          <input type="number" id='actividades'>
+        </label>
+      </form>
+    </main>
+    <footer>© 2022 by Felipe Toro Castila </br> (PipeToroC)</footer>
+    <script
+      src="https://kit.fontawesome.com/38f91498bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
 </html>
