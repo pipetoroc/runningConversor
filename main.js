@@ -9,8 +9,10 @@ form.addEventListener('submit', (evt) => {
     formCheck.remove()
   }
 
-  const form = document.createElement('form')
-  form.id = 'form-velocities'
+  const formVelocities = document.createElement('form')
+  formVelocities.id = 'form-velocities'
+  formVelocities.addEventListener('submit', readValues)
+
   const fieldset = document.createElement('fieldset')
 
   const legend = document.createElement('legend')
@@ -18,21 +20,21 @@ form.addEventListener('submit', (evt) => {
   legend.className = 'velocidades'
   fieldset.appendChild(legend)
 
+  const button = document.createElement('button')
+
   const numberActivities = document.getElementById('number-activities')
   for (let i = 1; i <= numberActivities.value; i++) {
     const input = document.createElement('input')
     input.placeholder = `Escribe la velocidad ${i}`
     fieldset.appendChild(input)
   }
-  form.appendChild(fieldset)
-  main.appendChild(form)
-  calcularVelocidad()
+  formVelocities.append(fieldset, button)
+  main.appendChild(formVelocities)
 })
-const formVelocity = document.getElementById('form-velocities')
-formVelocity.addEventListener('submit', calcularVelocidad)
 
-function calcularVelocidad (evt) {
+function readValues (evt) {
   evt.preventDefault()
-  const inputs = document.querySelectorAll('input')
+
+  const inputs = document.querySelectorAll('#form-velocities input')
   console.log(inputs)
 }
