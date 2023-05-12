@@ -8,6 +8,13 @@ form.addEventListener('submit', (evt) => {
   if (formCheck) {
     formCheck.remove()
   }
+  const results = document.querySelectorAll('.results')
+  console.log(results)
+  if (results.length !== 0) {
+    results.forEach(p => {
+      p.remove()
+    })
+  }
 
   const formVelocities = document.createElement('form')
   formVelocities.id = 'form-velocities'
@@ -21,11 +28,13 @@ form.addEventListener('submit', (evt) => {
   fieldset.appendChild(legend)
 
   const button = document.createElement('button')
+  button.innerHTML = 'Calcular'
 
   const numberActivities = document.getElementById('number-activities')
   for (let i = 1; i <= numberActivities.value; i++) {
     const input = document.createElement('input')
-    input.placeholder = `Escribe la velocidad ${i}`
+    input.pattern = '[0-9]{1,2}:[0-5][0-9]'
+    input.placeholder = `min:segundos ${i}`
     fieldset.appendChild(input)
   }
   formVelocities.append(fieldset, button)
@@ -35,6 +44,30 @@ form.addEventListener('submit', (evt) => {
 function readValues (evt) {
   evt.preventDefault()
 
+  const main = document.querySelector('main')
+
   const inputs = document.querySelectorAll('#form-velocities input')
-  console.log(inputs)
+
+  const results = document.querySelectorAll('.results')
+  console.log(results)
+  if (results.length !== 0) {
+    results.forEach(p => {
+      p.remove()
+    })
+  }
+
+  inputs.forEach(input => {
+    const value = input.value.split(':')
+    console.log(value)
+    const minutes = parseInt(value[0])
+    const segundos = parseInt(value[1]) / 60
+
+    const km = (60 / (minutes + segundos)).toFixed(2)
+    console.log(minutes, segundos, km)
+
+    const p = document.createElement('p')
+    p.innerHTML = `${km} km/hr`
+    p.className = 'results'
+    main.appendChild(p)
+  })
 }

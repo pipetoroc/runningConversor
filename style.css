@@ -170,13 +170,17 @@ header{
   width: 100%;
 }
 .logo{
-  width: 9.375rem;
-  height: 9.375rem;
-  border-radius: 1.25rem;
-  background-image: url('https://drive.google.com/uc?id=1oRExPWGhIWoJj_uEIekS3OZOPBlKLXER');
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  background-image: url('./assets/pipe-toro-logo.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  background-color: var(--primary);
+}
+div{
+  display: flex;
 }
 body{
   position: relative;
@@ -234,6 +238,12 @@ p{
   margin-top:2rem;
   font-size: 2rem;
   color: var(--secondary);
+}
+.results{
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: var(--tertiary);
+  text-align: center;
 }
 legend{
   margin-top: 5rem;
