@@ -66,7 +66,7 @@ function readValues (evt) {
     console.log(minutes, segundos, km)
 
     const p = document.createElement('p')
-    p.innerHTML = `${km} km/hr`
+    p.innerHTML = `${minutes}:${segundos} min/km = ${km} km/hr`
     p.className = 'results'
     main.appendChild(p)
   })

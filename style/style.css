@@ -173,7 +173,7 @@ header{
   width: 60px;
   height: 60px;
   border-radius: 4px;
-  background-image: url('./assets/pipe-toro-logo.svg');
+  background-image: url('../assets/pipe-toro-logo.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -189,7 +189,8 @@ body{
   background-color: var(--background);
 }
 main{
-  margin: 16px;
+  margin: 16px auto;
+  max-width: 800px;
 }
 i{
   justify-self: end;
