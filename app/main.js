@@ -39,6 +39,7 @@ form.addEventListener('submit', (evt) => {
   }
   formVelocities.append(fieldset, button)
   main.appendChild(formVelocities)
+  legend.scrollIntoView({ behavior: 'smooth' })
 })
 
 function readValues (evt) {
@@ -66,8 +67,9 @@ function readValues (evt) {
     console.log(minutes, segundos, km)
 
     const p = document.createElement('p')
-    p.innerHTML = `${minutes}:${segundos} min/km = ${km} km/hr`
+    p.innerHTML = `${minutes}:${(segundos * 60)} min/km = ${km} km/hr`
     p.className = 'results'
     main.appendChild(p)
+    p.scrollIntoView({ behavior: 'smooth' })
   })
 }
